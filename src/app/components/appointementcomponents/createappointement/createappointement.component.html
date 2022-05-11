@@ -1,0 +1,19 @@
+<div class="container mt-5">
+   
+    <form [formGroup]="appointmentForm" >
+        <div class="col-lg-6 mt-2">
+            <input type="date"  class ="form-control" formControlName="date_app" placeholder="Enter Description">
+        </div>
+        <div class="col-lg-6 mt-2">
+        <input type="date" class ="form-control"  formControlName="hour" placeholder="Enter Description">
+        </div>
+     
+           
+            <div class="col-lg-4 mt-2"  >
+                <button class="btn btn-primary btn-sm" (click)="appSubmit()">Create</button>
+            </div>
+            <div class="col-lg-4 mt-2" >
+                <button class="btn btn-dark btn-sm"  *ngIf="getparamid"(click)="appUpdate()">Update</button>
+            </div>
+    </form>
+</div>

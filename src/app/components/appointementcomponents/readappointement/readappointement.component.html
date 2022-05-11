@@ -1,0 +1,85 @@
+
+  <div class="container" mt->
+    <style>
+  
+  body,html{
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: #e74c3c !important;
+      }
+  
+      .searchbar{
+      margin-bottom: auto;
+      margin-top: auto;
+      height: 60px;
+      background-color: #353b48;
+      border-radius: 30px;
+      padding: 10px;
+      }
+  
+      .search_input{
+      color: white;
+      border: 0;
+      outline: 0;
+      background: none;
+      width: 0;
+      caret-color:transparent;
+      line-height: 40px;
+      transition: width 0.4s linear;
+      }
+  
+      .searchbar:hover > .search_input{
+      padding: 0 10px;
+      width: 450px;
+      caret-color:red;
+      transition: width 0.4s linear;
+      }
+  
+      .searchbar:hover > .search_icon{
+      background: white;
+      color: #e74c3c;
+      }
+  
+      .search_icon{
+      height: 40px;
+      width: 40px;
+      float: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color:white;
+      text-decoration:none;
+      }
+    </style>
+    
+        
+         
+        
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">id_app</th>
+              <th scope="col">date_app</th>
+              <th scope="col">hour</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let us of readData2 '>
+              <th scope="row">{{us.id_app}}</th>
+              <td>{{us.date_app}}</td>
+              <td>{{us.hour}}</td>
+              <td>
+                <button class="btn btn-sm btn-danger" (click)="deleteID2(us.id_app)">Delete</button>
+                &nbsp;
+                <a [routerLink]="['/createapp',us.id_app]"  class="btn btn-sm btn-success ">Update</a>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+  </div>
+  
